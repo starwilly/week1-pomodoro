@@ -7,13 +7,15 @@ import { TaskListComponent } from './components/task-list/task-list.component';
 import { ClockComponent } from './components/clock/clock.component';
 import { PreferenceComponent } from './components/preference/preference.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { NavigationComponent } from './components/navigation/navigation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TaskListComponent,
     ClockComponent,
-    PreferenceComponent
+    PreferenceComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,

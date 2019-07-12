@@ -2,5 +2,6 @@
   <app-clock (menuClick)="toggleMenu()"></app-clock>
 </div>
 <div class="drawer-panel" [@slideInOut]="menuState">
+  <app-navigation></app-navigation>
   <router-outlet></router-outlet>
 </div>
