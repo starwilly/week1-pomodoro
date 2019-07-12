@@ -8,6 +8,7 @@ import { ClockComponent } from './components/clock/clock.component';
 import { PreferenceComponent } from './components/preference/preference.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { AddTaskComponent } from './components/add-task/add-task.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { NavigationComponent } from './components/navigation/navigation.componen
     TaskListComponent,
     ClockComponent,
     PreferenceComponent,
-    NavigationComponent
+    NavigationComponent,
+    AddTaskComponent
   ],
   imports: [
     BrowserModule,
