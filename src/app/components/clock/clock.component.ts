@@ -7,7 +7,6 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 })
 export class ClockComponent implements OnInit {
 
-  @Output() menuClick = new EventEmitter<void>();
   constructor() { }
 
   ngOnInit() {
