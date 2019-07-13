@@ -1,1 +1,3 @@
-<p>task-list works!</p>
+<ul *ngFor="let task of tasks">
+  <li>{{task.title}} ({{task.estimation}})</li>
+</ul>
