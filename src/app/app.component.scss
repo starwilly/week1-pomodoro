@@ -1,3 +1,5 @@
+@import "variables";
+
 :host {
   display: flex;
   width: 100%;
@@ -9,13 +11,25 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  background-color: #EAEAEA;
 }
 
-.drawer-panel {
-  background-color: #ccc;
+.drawer {
+  background-color: $drawer-panel-bg;
   height: 100%;
   position: absolute;
   right: 0;
   width: 50%;
   display: flex;
+  color: white;
+}
+
+
+.drawer__content {
+  padding: 30px;
+}
+
+.split {
+  width: 2px;
+  background-color: #414141;
 }

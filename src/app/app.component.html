@@ -1,7 +1,10 @@
 <div class="clock-panel" [@clockPanelAnimation]="getAnimationData(routerOutlet)">
   <app-clock></app-clock>
 </div>
-<div class="drawer-panel" [@slideInOut]="getAnimationData(routerOutlet)">
+<div class="drawer" [@slideInOut]="getAnimationData(routerOutlet)">
   <app-navigation (togglePanel)="toggleMenu()"></app-navigation>
-  <router-outlet #routerOutlet="outlet"></router-outlet>
+  <span class="split"></span>
+  <div class="drawer__content">
+    <router-outlet #routerOutlet="outlet"></router-outlet>
+  </div>
 </div>
