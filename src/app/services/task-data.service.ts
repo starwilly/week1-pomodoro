@@ -27,4 +27,10 @@ export class TaskDataService {
   constructor() {
     this.taskList$ = this._taskList$.asObservable();
   }
+
+  addTask(task: Task) {
+    const tasks = this._taskList$.value;
+    tasks.push(task);
+    this._taskList$.next(tasks);
+  }
 }

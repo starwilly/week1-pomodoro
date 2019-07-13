@@ -4,10 +4,11 @@ import {PreferenceComponent} from './components/preference/preference.component'
 import {AddTaskComponent} from './components/add-task/add-task.component';
 import {TaskListPageComponent} from './components/task-list-page/task-list-page.component';
 import {TaskListResolverService} from './components/task-list-page/task-list-resolver.service';
+import {TaskCreatePageComponent} from './components/task-create-page/task-create-page.component';
 
 
 const routes: Routes = [
-  { path: 'tasks/add', component: AddTaskComponent, data: {animation: 'in'}},
+  { path: 'tasks/create', component: TaskCreatePageComponent, data: {animation: 'in'}},
   { path: 'tasks', component: TaskListPageComponent,
     data: {animation: 'in'},
     resolve: {tasks: TaskListResolverService}},

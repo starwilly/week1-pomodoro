@@ -1,0 +1,11 @@
+{{ task | json}}
+<form (ngSubmit)="onCreate()">
+  <label>Title
+    <input type="text" name="title" [(ngModel)]="task.title">
+  </label>
+  <label>Est
+    <input type="number" name="title" [(ngModel)]="task.estimation">
+  </label>
+  <input type="submit" value="ADD TASK">
+
+</form>

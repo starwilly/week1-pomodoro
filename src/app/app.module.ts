@@ -11,6 +11,8 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { AddTaskComponent } from './components/add-task/add-task.component';
 import { TaskListPageComponent } from './components/task-list-page/task-list-page.component';
 import {TaskDataService} from './services/task-data.service';
+import { TaskCreatePageComponent } from './components/task-create-page/task-create-page.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,12 +22,14 @@ import {TaskDataService} from './services/task-data.service';
     PreferenceComponent,
     NavigationComponent,
     AddTaskComponent,
-    TaskListPageComponent
+    TaskListPageComponent,
+    TaskCreatePageComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [TaskDataService],
   bootstrap: [AppComponent]
