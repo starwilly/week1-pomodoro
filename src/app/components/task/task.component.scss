@@ -1,0 +1,45 @@
+:host {
+  display: flex;
+  padding: 9px 10px;
+  background-color: #414141;
+  border-radius: 2px;
+}
+
+.icon {
+  padding: 0 14px;
+  & > img {
+    width: 13px;
+  }
+}
+
+.icon, .actions {
+  flex-grow: 0;
+  flex-shrink: 0;
+  display: flex;
+}
+.content {
+  flex-grow: 1;
+}
+
+.detail-btn {
+  background: none;
+  color: #ACACAC;
+  border: none;
+  font-size: 1rem;
+  font-weight: 900;
+  padding: 0 0 10px 0;
+}
+
+.estimation {
+  display: flex;
+  padding: 5px 0;
+}
+
+.estimation__item {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  border: 1px solid #EA5548;
+  margin-right: 5px;
+}

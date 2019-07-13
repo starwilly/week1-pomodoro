@@ -13,6 +13,7 @@ import { TaskListPageComponent } from './components/task-list-page/task-list-pag
 import {TaskDataService} from './services/task-data.service';
 import { TaskCreatePageComponent } from './components/task-create-page/task-create-page.component';
 import {FormsModule} from '@angular/forms';
+import { TaskComponent } from './components/task/task.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {FormsModule} from '@angular/forms';
     NavigationComponent,
     AddTaskComponent,
     TaskListPageComponent,
-    TaskCreatePageComponent
+    TaskCreatePageComponent,
+    TaskComponent
   ],
   imports: [
     BrowserModule,
