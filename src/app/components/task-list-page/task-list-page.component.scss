@@ -1,5 +1,5 @@
 @import "variables";
 
-:host {
-  background-color: $drawer-panel-bg;
+app-editable-task + app-editable-task {
+  margin-top: 1px;
 }

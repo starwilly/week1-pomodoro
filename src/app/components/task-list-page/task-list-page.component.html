@@ -3,6 +3,10 @@
     <h2 class="g-panel__title">Task List</h2>
   </div>
   <div class="g-panel__body">
-    <app-task-list [tasks]="tasks"></app-task-list>
+        <app-editable-task *ngFor="let task of tasks; index as i"
+                           [task]="task"
+                           [isOpen]="editingIndex === i"
+                           (toggleBtnClick)="toggleTaskEdit(i)"
+        ></app-editable-task>
   </div>
 </div>

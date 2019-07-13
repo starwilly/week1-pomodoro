@@ -8,7 +8,8 @@ import {Task} from '../../models';
 })
 export class TaskComponent implements OnInit, OnChanges {
 
-  @Input() task: Task;
+  @Input() title: string;
+  @Input() estimation: number;
   estimations: number[];
 
   constructor() { }
@@ -17,9 +18,8 @@ export class TaskComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes.task) {
-      const {estimation} = this.task;
-      this.estimations = Array(estimation).fill(0).map((x, i) => i);
+    if (changes.estimation) {
+      this.estimations = Array(this.estimation).fill(0).map((x, i) => i);
     }
   }
 

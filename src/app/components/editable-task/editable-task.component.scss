@@ -1,0 +1,41 @@
+:host {
+  display: block;
+  position: relative;
+  background-color: #414141;
+}
+
+.toggle-btn {
+  background: none;
+  color: white;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 900;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 9px 10px;
+  display: block;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+}
+
+.form {
+  padding: 20px 0;
+  margin-left: 42px;
+  margin-right: 42px;
+  border-top: 1px solid #333333;
+}
+
+input.form-control {
+  padding: 12px 15px 11px;
+}
+
+.form-actions {
+  padding-top: 30px;
+  display: flex;
+  .btn + .btn {
+    margin-left: 20px;
+  }
+}

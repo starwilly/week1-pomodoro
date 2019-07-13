@@ -8,7 +8,7 @@
 .icon {
   padding: 0 14px;
   & > img {
-    width: 13px;
+    width: 14px;
   }
 }
 
@@ -19,16 +19,21 @@
 }
 .content {
   flex-grow: 1;
+  padding-right: 40px;
 }
 
-.detail-btn {
-  background: none;
-  color: #ACACAC;
-  border: none;
-  font-size: 1rem;
-  font-weight: 900;
-  padding: 0 0 10px 0;
+.title {
+  min-height: 20px;
 }
+
+//.detail-btn {
+//  background: none;
+//  color: #ACACAC;
+//  border: none;
+//  font-size: 1rem;
+//  font-weight: 900;
+//  padding: 0 0 10px 0;
+//}
 
 .estimation {
   display: flex;

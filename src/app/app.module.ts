@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TaskListComponent } from './components/task-list/task-list.component';
 import { ClockComponent } from './components/clock/clock.component';
 import { PreferenceComponent } from './components/preference/preference.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -14,18 +13,19 @@ import {TaskDataService} from './services/task-data.service';
 import { TaskCreatePageComponent } from './components/task-create-page/task-create-page.component';
 import {FormsModule} from '@angular/forms';
 import { TaskComponent } from './components/task/task.component';
+import { EditableTaskComponent } from './components/editable-task/editable-task.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TaskListComponent,
     ClockComponent,
     PreferenceComponent,
     NavigationComponent,
     AddTaskComponent,
     TaskListPageComponent,
     TaskCreatePageComponent,
-    TaskComponent
+    TaskComponent,
+    EditableTaskComponent
   ],
   imports: [
     BrowserModule,

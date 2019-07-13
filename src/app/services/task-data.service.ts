@@ -10,6 +10,30 @@ const defaultTasks: Task[] = [
     isComplete: false
   },
   {
+    title: 'first todo',
+    estimation: 5,
+    achieveTimes: [],
+    isComplete: false
+  },
+  {
+    title: 'first todo',
+    estimation: 5,
+    achieveTimes: [],
+    isComplete: false
+  },
+  {
+    title: 'first todo',
+    estimation: 5,
+    achieveTimes: [],
+    isComplete: false
+  },
+  {
+    title: 'first todo',
+    estimation: 5,
+    achieveTimes: [],
+    isComplete: false
+  },
+  {
     title: 'second todo',
     estimation: 8,
     achieveTimes: [],
