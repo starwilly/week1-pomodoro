@@ -90,6 +90,10 @@ input.form-control {
   border-radius: 30px;
   border: none;
   font-size: .875rem;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
 }
 
 .btn-lg {

@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Task} from '../models';
 import {BehaviorSubject, Observable} from 'rxjs';
+import {take} from 'rxjs/operators';
 
 const defaultTasks: Task[] = [
   new Task({
@@ -42,6 +43,14 @@ export class TaskDataService {
   addTask(task: Task) {
     const tasks = this._taskList$.value;
     tasks.push(task);
+    this._taskList$.next(tasks);
+  }
+
+  updateTask(task: Task) {
+    const index = this._taskList$.value.findIndex(t => t.id === task.id);
+    console.log(index, this._taskList$.value);
+    const tasks = this._taskList$.value;
+    tasks.splice(index, 1, task);
     this._taskList$.next(tasks);
   }
 }

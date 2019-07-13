@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Task} from '../../models';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-editable-task',
@@ -12,10 +13,24 @@ export class EditableTaskComponent implements OnInit {
   @Input() isOpen: boolean;
 
   @Output() toggleBtnClick = new EventEmitter<void >();
+  @Output() taskEdit = new EventEmitter<Task>();
+
+  editingTask: Task = null;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onToggleBtnClick() {
+    this.editingTask = new Task(this.task.data);
+    this.toggleBtnClick.emit();
+  }
+
+  editTask(form: NgForm) {
+    const task = new Task({...this.task.data, ...form.value});
+    this.taskEdit.emit(task);
+    this.editingTask = null;
   }
 
 }

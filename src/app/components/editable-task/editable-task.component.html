@@ -1,14 +1,14 @@
 <app-task [title]="task.title" [estimation]="task.estimation"></app-task>
-<button class="toggle-btn" (click)="toggleBtnClick.emit()">...</button>
+<button class="toggle-btn" (click)="onToggleBtnClick()">...</button>
 <div [hidden]="!isOpen">
-  <form class="form">
+  <form class="form" (ngSubmit)="editTask(taskForm)" #taskForm="ngForm" autocomplete="off" *ngIf="editingTask">
     <div class="form-group">
       <label for="title" class="form-label">Task Title</label>
-      <input id="title" class="form-control" type="text" name="title" [(ngModel)]="task.title">
+      <input id="title" class="form-control" type="text" name="title" [(ngModel)]="editingTask.title">
     </div>
     <div class="form-group">
       <label for="title" class="form-label">Estimated Tomato</label>
-      <input type="number" class="form-control" name="estimation" [(ngModel)]="task.estimation">
+      <input type="number" class="form-control" name="estimation" [(ngModel)]="editingTask.estimation">
     </div>
     <div class="form-actions">
       <button class="btn btn--default">Archive</button>

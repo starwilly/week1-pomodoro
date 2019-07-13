@@ -5,8 +5,9 @@
   <div class="g-panel__body task-list">
       <app-editable-task *ngFor="let task of tasks; index as i"
                          [task]="task"
-                         [isOpen]="editingIndex === i"
-                         (toggleBtnClick)="toggleTaskEdit(i)"
+                         [isOpen]="!!editingTask && editingTask.id === task.id"
+                         (toggleBtnClick)="toggleTaskEdit(task)"
+                         (taskEdit)="updateTask($event)"
       ></app-editable-task>
   </div>
 </div>

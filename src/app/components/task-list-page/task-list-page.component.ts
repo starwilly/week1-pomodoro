@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Task} from '../../models';
 import {ActivatedRoute} from '@angular/router';
+import {TaskDataService} from '../../services/task-data.service';
 
 @Component({
   selector: 'app-task-list-page',
@@ -10,15 +11,19 @@ import {ActivatedRoute} from '@angular/router';
 export class TaskListPageComponent implements OnInit {
 
   tasks: Task[] = [];
-  editingIndex: number = null;
-  constructor(private route: ActivatedRoute) { }
+  editingTask: Task = null;
+  constructor(private route: ActivatedRoute, private taskData: TaskDataService) { }
 
   ngOnInit() {
     this.route.data.subscribe((data: {tasks: Task[]}) => this.tasks = data.tasks);
+    this.taskData.taskList$.subscribe(tasks => this.tasks = tasks);
   }
 
-  toggleTaskEdit(index: number) {
-    this.editingIndex = index === this.editingIndex ? null : index;
-    console.log(index, this.tasks);
+  toggleTaskEdit(task: Task) {
+    this.editingTask = this.editingTask === task ? null : task;
+  }
+
+  updateTask(task: Task) {
+    this.taskData.updateTask(task);
   }
 }
