@@ -1,44 +1,31 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Task} from '../models';
 import {BehaviorSubject, Observable} from 'rxjs';
 
 const defaultTasks: Task[] = [
-  {
-    title: 'first todo',
-    estimation: 5,
-    achieveTimes: [],
-    isComplete: false
-  },
-  {
-    title: 'first todo',
-    estimation: 5,
-    achieveTimes: [],
-    isComplete: false
-  },
-  {
-    title: 'first todo',
-    estimation: 5,
-    achieveTimes: [],
-    isComplete: false
-  },
-  {
-    title: 'first todo',
-    estimation: 5,
-    achieveTimes: [],
-    isComplete: false
-  },
-  {
-    title: 'first todo',
-    estimation: 5,
-    achieveTimes: [],
-    isComplete: false
-  },
-  {
-    title: 'second todo',
-    estimation: 8,
-    achieveTimes: [],
-    isComplete: false
-  }
+  new Task({
+      title: 'first todo',
+      estimation: 5,
+    },
+  ),
+  new Task({
+      title: 'first todo',
+      estimation: 5,
+      isComplete: false
+    }),
+  new Task(
+    {
+      title: 'first todo',
+      estimation: 5,
+    }),
+  new Task({
+      title: 'first todo',
+      estimation: 5,
+    }),
+  new Task({
+      title: 'second todo',
+      estimation: 8,
+    })
 ];
 
 @Injectable({

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Task} from '../../models';
 import {TaskDataService} from '../../services/task-data.service';
 
-const defaultTask = {title: '', estimation: 0, achieveTimes: [], isComplete: false};
+const defaultTask = new Task();
 
 @Component({
   selector: 'app-task-create-page',
@@ -11,7 +11,7 @@ const defaultTask = {title: '', estimation: 0, achieveTimes: [], isComplete: fal
 })
 export class TaskCreatePageComponent implements OnInit {
 
-  task: Task = { ... defaultTask};
+  task: Task = new Task();
 
   constructor(private taskData: TaskDataService) { }
 
