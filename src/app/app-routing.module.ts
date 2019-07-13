@@ -9,7 +9,7 @@ import {TaskCreatePageComponent} from './components/task-create-page/task-create
 
 const routes: Routes = [
   { path: 'tasks/create', component: TaskCreatePageComponent, data: {animation: 'in'}},
-  { path: 'tasks', component: TaskListPageComponent,
+  { path: 'tasks/list', component: TaskListPageComponent,
     data: {animation: 'in'},
     resolve: {tasks: TaskListResolverService}},
   { path: 'preference', component: PreferenceComponent, data: {animation: 'in'}},

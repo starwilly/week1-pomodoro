@@ -13,6 +13,21 @@ svg {
   fill: currentColor;
 }
 
+.nav {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  & > li {
+    list-style: none;
+  }
+  
+  a.active {
+    color: #EA5548;
+  }
+}
+
 a {
   color: white;
   &:hover {
