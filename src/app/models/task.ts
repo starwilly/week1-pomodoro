@@ -6,6 +6,7 @@ interface TaskData {
   estimation?: number;
   archiveTime?: Date[];
   isComplete?: boolean;
+  createdAt?: Date;
 }
 
 export class Task {
@@ -14,6 +15,7 @@ export class Task {
   estimation: number;
   archiveTime: Date[];
   isComplete: boolean;
+  createAt: Date;
 
   constructor(data: TaskData= {}) {
     this.title = data.title || '';
@@ -21,6 +23,7 @@ export class Task {
     this.archiveTime = data.archiveTime || [];
     this.isComplete = false;
     this.id = data.id || shortid.generate();
+    this.createAt = data.createdAt || new Date();
   }
 
   get data(): TaskData {

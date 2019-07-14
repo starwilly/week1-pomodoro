@@ -3,19 +3,23 @@
     <h2 class="g-panel__title">Add New Task</h2>
   </div>
   <div class="g-panel__body">
-    <form class="form" (ngSubmit)="onCreate()">
+    <form class="form" (ngSubmit)="onCreate(form)" #form="ngForm" autocomplete="off">
       <div class="form-group">
         <label for="title" class="form-label">Task Title</label>
-        <input id="title" class="form-control" type="text" name="title" [(ngModel)]="task.title">
+        <input id="title" class="form-control" type="text" name="title" [(ngModel)]="editTask.title">
       </div>
       <div class="form-group">
         <label for="title" class="form-label">Estimated Tomato</label>
-        <input type="number" class="form-control" name="estimation" [(ngModel)]="task.estimation">
+        <input type="number" class="form-control" name="estimation" [(ngModel)]="editTask.estimation">
       </div>
       <div class="form-group">
-        <input type="submit" class="btn btn--primary btn--block" value="ADD TASK">
+        <input type="submit" class="btn btn--primary btn--block btn--lg" value="ADD TASK">
       </div>
     </form>
   </div>
+  <app-task *ngFor="let task of recentTasks$ | async"
+            [title]="task.title"
+            [estimation]="task.estimation"
+  ></app-task>
 </div>
 <!--{{ task | json}}-->

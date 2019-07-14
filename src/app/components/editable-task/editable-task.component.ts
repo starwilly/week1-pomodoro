@@ -30,6 +30,7 @@ export class EditableTaskComponent implements OnInit {
   editTask(form: NgForm) {
     const task = new Task({...this.task.data, ...form.value});
     this.taskEdit.emit(task);
+    console.log(task);
     this.editingTask = null;
   }
 
