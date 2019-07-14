@@ -2,12 +2,19 @@
   <div class="g-panel__header">
     <h2 class="g-panel__title">Task List</h2>
   </div>
-  <div class="g-panel__body task-list">
+  <div class="g-panel__body">
+    <div class="tabs">
+      <a class="tab active">TODO</a>
+      <a class="tab">DONE</a>
+      <a class="tab">ARCHIVE</a>
+    </div>
+    <div class="task-list">
       <app-editable-task *ngFor="let task of tasks; index as i"
                          [task]="task"
                          [isOpen]="!!editingTask && editingTask.id === task.id"
                          (toggleBtnClick)="toggleTaskEdit(task)"
                          (taskEdit)="updateTask($event)"
       ></app-editable-task>
+    </div>
   </div>
 </div>

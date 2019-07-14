@@ -4,7 +4,38 @@ app-editable-task + app-editable-task {
   margin-top: 1px;
 }
 
-//.task-list {
-//  overflow-y: scroll;
-//  flex: 1;
-//}
+.g-panel__body {
+  display: flex;
+  flex-direction: column;
+}
+
+.task-list {
+  overflow-y: scroll;
+  flex: 1;
+}
+
+.tabs {
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+.tab {
+  background-color: #606060;
+  padding: 5px 22px;
+  border-radius: 8px 8px 0 0;
+  color: #ACACAC;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+
+  &.active {
+    background-color: #EA5548;
+    color: #FCFCFC;
+  }
+}
+
+.tab + .tab {
+  margin-left: 5px;
+}
+
+
