@@ -14,6 +14,7 @@ import { TaskCreatePageComponent } from './components/task-create-page/task-crea
 import {FormsModule} from '@angular/forms';
 import { TaskComponent } from './components/task/task.component';
 import { EditableTaskComponent } from './components/editable-task/editable-task.component';
+import { DonutComponent } from './components/donut/donut.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { EditableTaskComponent } from './components/editable-task/editable-task.
     TaskListPageComponent,
     TaskCreatePageComponent,
     TaskComponent,
-    EditableTaskComponent
+    EditableTaskComponent,
+    DonutComponent
   ],
   imports: [
     BrowserModule,

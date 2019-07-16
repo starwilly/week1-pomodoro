@@ -1,0 +1,23 @@
+:host {
+  display: block;
+}
+
+.pie {
+  fill: #ACACAC;
+  stroke: #EA5548;
+  stroke-width: 32;
+  transition: stroke-dasharray .3s ease;
+}
+
+:host:hover {
+  .pie {
+    stroke-dasharray: 60 100;
+  }
+
+}
+
+svg {
+  transform: rotate(-90deg);
+  border-radius: 50%;
+  //border: 1px solid red;
+}
