@@ -15,6 +15,7 @@ import {FormsModule} from '@angular/forms';
 import { TaskComponent } from './components/task/task.component';
 import { EditableTaskComponent } from './components/editable-task/editable-task.component';
 import { DonutComponent } from './components/donut/donut.component';
+import { ClockPanelComponent } from './components/clock-panel/clock-panel.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { DonutComponent } from './components/donut/donut.component';
     TaskCreatePageComponent,
     TaskComponent,
     EditableTaskComponent,
-    DonutComponent
+    DonutComponent,
+    ClockPanelComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,7 @@
-<app-task [title]="task.title" [estimation]="task.estimation"></app-task>
+<app-task [title]="task.title"
+          [estimation]="task.estimation"
+          [finished]="task.workHistory.length"
+          (click)="taskSelect.emit(task)"></app-task>
 <button class="toggle-btn" (click)="onToggleBtnClick()">...</button>
 <div [hidden]="!isOpen">
   <form class="form" (ngSubmit)="editTask(taskForm)" #taskForm="ngForm" autocomplete="off" *ngIf="editingTask">

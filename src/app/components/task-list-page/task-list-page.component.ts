@@ -26,4 +26,8 @@ export class TaskListPageComponent implements OnInit {
   updateTask(task: Task) {
     this.taskData.updateTask(task);
   }
+
+  onTaskSelect(task: Task) {
+    this.taskData.selectTask(task);
+  }
 }

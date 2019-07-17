@@ -10,6 +10,7 @@ export class TaskComponent implements OnInit, OnChanges {
 
   @Input() title: string;
   @Input() estimation: number;
+  @Input() finished: number;
   estimations: number[];
 
   constructor() { }

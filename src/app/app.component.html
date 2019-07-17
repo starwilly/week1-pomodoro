@@ -1,5 +1,5 @@
 <div class="clock-panel" [@clockPanelAnimation]="getAnimationData(routerOutlet)">
-  <app-clock [ellipse]="1115" [total]="1500"></app-clock>
+  <app-clock-panel></app-clock-panel>
 </div>
 <div class="drawer" [@slideInOut]="getAnimationData(routerOutlet)">
   <app-navigation (togglePanel)="toggleMenu()"></app-navigation>

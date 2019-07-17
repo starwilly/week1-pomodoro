@@ -14,6 +14,7 @@ export class EditableTaskComponent implements OnInit {
 
   @Output() toggleBtnClick = new EventEmitter<void >();
   @Output() taskEdit = new EventEmitter<Task>();
+  @Output() taskSelect = new EventEmitter<Task>();
 
   editingTask: Task = null;
 

@@ -2,7 +2,9 @@
 <div class="content">
   <div class="title">{{ title }}</div>
   <div class="estimation">
-    <span class="estimation__item" *ngFor="let e of estimations"></span>
+    <span class="estimation__item is-finished" *ngFor="let e of estimations;index as i"
+          [ngClass]="{'is-finished': i < finished }"
+    ></span>
   </div>
 </div>
 <div class="actions">

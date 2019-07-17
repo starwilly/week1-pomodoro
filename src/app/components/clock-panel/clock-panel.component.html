@@ -1,0 +1,16 @@
+<div *ngIf="currentTask">
+  {{ currentTask | json}}
+  <div *ngIf="currentTask.state === TaskState.work">
+    <h2>WORK</h2>
+    <app-clock [elapse]="currentTask.workElapse"
+               [total]="WORK_TIME"></app-clock>
+  </div>
+  <div *ngIf="currentTask.state === TaskState.break">
+    <h2>BREAK</h2>
+    <app-clock [elapse]="currentTask.breakElapse"
+               [total]="BREAK_TIME"></app-clock>
+  </div>
+<button (click)="play()">Play</button>
+<button (click)="pause()">Pause</button>
+<button (click)="skip()">Skip</button>
+</div>

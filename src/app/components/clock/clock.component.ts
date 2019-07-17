@@ -11,19 +11,18 @@ export class ClockComponent implements OnInit {
   constructor() { }
 
   @Input() total: number;
-  @Input() ellipse: number;
+  @Input() elapse: number;
 
   ngOnInit() {
   }
 
   get percentage(): number {
-    console.log(this.ellipse / this.total);
-    return this.ellipse / this.total * 100;
+    return this.elapse / this.total * 100;
   }
 
   get text(): string {
-    const value = this.total - this.ellipse;
-    console.log(value);
+    const value = this.total - this.elapse;
+    // console.log(value);
     const minute = `${Math.floor(value / 60)}`.padStart(2, '0');
     const second = `${value % 60}`.padStart(2, '0');
     return `${minute}:${second}`;
