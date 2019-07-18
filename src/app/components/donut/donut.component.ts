@@ -10,7 +10,9 @@ export class DonutComponent implements OnInit {
   constructor() { }
 
   @Input() value: number;
-  @Input() radius: number;
+  @Input() showBorder = true;
+  @Input() bgColor = 'transparent';
+  @Input() foregroundColor = '#EA5548';
 
   ngOnInit() {
   }

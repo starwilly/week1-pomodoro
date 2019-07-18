@@ -26,21 +26,12 @@
   min-height: 20px;
 }
 
-//.detail-btn {
-//  background: none;
-//  color: #ACACAC;
-//  border: none;
-//  font-size: 1rem;
-//  font-weight: 900;
-//  padding: 0 0 10px 0;
-//}
-
-.estimation {
+.indicators {
   display: flex;
   padding: 5px 0;
 }
 
-.estimation__item {
+.indicator {
   display: block;
   width: 8px;
   height: 8px;
@@ -49,6 +40,16 @@
   margin-right: 5px;
 }
 
+.working-indicator {
+  width: 8px;
+  height: 8px;
+  margin-right: 5px;
+}
+
 .is-finished {
   background-color: #EA5548;
+}
+
+.is-working {
+  background-color: pink;
 }

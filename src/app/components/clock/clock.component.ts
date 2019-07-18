@@ -22,7 +22,6 @@ export class ClockComponent implements OnInit {
 
   get text(): string {
     const value = this.total - this.elapse;
-    // console.log(value);
     const minute = `${Math.floor(value / 60)}`.padStart(2, '0');
     const second = `${value % 60}`.padStart(2, '0');
     return `${minute}:${second}`;

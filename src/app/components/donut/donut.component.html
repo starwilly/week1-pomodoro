@@ -1,3 +1,7 @@
 <svg viewBox="0 0 32 32" class="chart" width="100%" height="100%">
-  <circle r="16" cx="16" cy="16" class="pie" [style.stroke-dasharray]="dashArray" />
+  <circle r="16" cx="16" cy="16" class="pie"
+          [style.stroke-dasharray]="dashArray"
+          [style.fill]="bgColor"
+          [style.stroke]="foregroundColor" />
+  <circle r="16" cx="16" cy="16" class="border" *ngIf="showBorder"/>
 </svg>

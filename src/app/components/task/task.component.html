@@ -1,10 +1,12 @@
 <div class="icon"><img src="assets/images/tomato_small_color.svg"></div>
 <div class="content">
   <div class="title">{{ title }}</div>
-  <div class="estimation">
-    <span class="estimation__item is-finished" *ngFor="let e of estimations;index as i"
-          [ngClass]="{'is-finished': i < finished }"
-    ></span>
+  <div class="indicators">
+
+    <app-donut class="indicator"
+               *ngFor="let e of indicators; index as i"
+               [value]="percentage(i)"
+    ></app-donut>
   </div>
 </div>
 <div class="actions">
