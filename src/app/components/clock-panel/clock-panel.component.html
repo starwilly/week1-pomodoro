@@ -1,16 +1,30 @@
 <div *ngIf="currentTask">
-  {{ currentTask | json}}
   <div *ngIf="currentTask.state === TaskState.work">
     <h2>WORK</h2>
     <app-clock [elapse]="currentTask.workElapse"
-               [total]="WORK_TIME"></app-clock>
+               [type]="currentTask.state">
+               </app-clock>
   </div>
   <div *ngIf="currentTask.state === TaskState.break">
-    <h2>BREAK</h2>
     <app-clock [elapse]="currentTask.breakElapse"
-               [total]="BREAK_TIME"></app-clock>
+               [type]="currentTask.state"></app-clock>
   </div>
-<button (click)="play()">Play</button>
-<button (click)="pause()">Pause</button>
-<button (click)="skip()">Skip</button>
+  <div>
+    <button class="btn" (click)="play()">
+      <svg width="15px" height="20px" viewBox="0 0 15 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <path d="M6.26760858,3.34561578 C6.45308176,3.06746065 6.76528751,2.90039141 7.09960858,2.90039141 C7.43392965,2.90039141 7.7461354,3.06746065 7.93160858,3.34561578 L16.0626086,15.5456158 C16.2656809,15.8523729 16.2839257,16.2458587 16.1101105,16.570091 C15.9362952,16.8943233 15.5984915,17.0969378 15.2306086,17.0976158 L-1.03139142,17.0976158 C-1.40027827,17.097671 -1.73923747,16.8946373 -1.91326539,16.5693808 C-2.08729331,16.2441243 -2.06812363,15.8494744 -1.86339142,15.5426158 L6.26760858,3.34561578 Z" id="多角形_2" transform="translate(7.098612, 9.999004) rotate(90.000000) translate(-7.098612, -9.999004)" fill="currentColor"></path>
+      </svg>
+    </button>
+    <button class="btn" (click)="pause()">
+      <svg width="14px" height="15px" viewBox="0 0 14 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <path d="M3.5,0 L1,0 C0.4,0 0,0.4 0,1 L0,14 C0,14.6 0.4,15 1,15 L3.5,15 C4.1,15 4.5,14.6 4.5,14 L4.5,1 C4.5,0.4 4.1,0 3.5,0 Z" fill="currentColor"></path>
+        <path d="M13,0 L10.5,0 C9.9,0 9.5,0.4 9.5,1 L9.5,14 C9.5,14.6 9.9,15 10.5,15 L13,15 C13.6,15 14,14.6 14,14 L14,1 C14,0.4 13.6,0 13,0 Z" fill="currentColor"></path>
+      </svg>
+    </button>
+    <button class="btn" (click)="skip()">
+      <svg width="24px" height="20px" viewBox="0 0 24 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <path d="M14,0 C8.5,0 4,4.5 4,10 L1.2,10 C1.1,10 0.9,10.1 0.8,10.1 C0.6,10.3 0.6,10.6 0.8,10.8 L5.6,15.6 C5.8,15.8 6.1,15.8 6.3,15.6 L11.1,10.8 C11.2,10.7 11.2,10.6 11.2,10.4 C11.2,10.1 11,9.9 10.7,9.9 L8,9.9 C8,6.6 10.7,3.9 14,3.9 C17.3,3.9 20,6.6 20,9.9 C20,13.2 17.3,15.9 14,15.9 C12.9,15.9 12,16.8 12,17.9 C12,19 12.9,19.9 14,19.9 C19.5,19.9 24,15.4 24,9.9 C24,4.4 19.5,0 14,0 Z" fill="currentColor"></path>
+      </svg>
+    </button>
+  </div>
 </div>

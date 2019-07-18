@@ -1,19 +1,28 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Observable, timer} from 'rxjs';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
+import {BREAK_TIME, TaskState, WORK_TIME} from '../../models';
 
 @Component({
   selector: 'app-clock',
   templateUrl: './clock.component.html',
   styleUrls: ['./clock.component.scss']
 })
-export class ClockComponent implements OnInit {
+export class ClockComponent implements OnInit, OnChanges {
 
   constructor() { }
 
-  @Input() total: number;
+  total: number;
   @Input() elapse: number;
+  @Input() type: TaskState;
+  color: string;
 
   ngOnInit() {
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.type)  {
+      this.color = this.type === TaskState.work ? '#EA5548' : '#B5E254';
+      this.total = this.type === TaskState.work ? WORK_TIME : BREAK_TIME;
+    }
   }
 
   get percentage(): number {
