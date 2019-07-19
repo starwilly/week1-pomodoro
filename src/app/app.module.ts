@@ -35,7 +35,7 @@ import { ClockPanelComponent } from './components/clock-panel/clock-panel.compon
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [TaskDataService],
   bootstrap: [AppComponent]

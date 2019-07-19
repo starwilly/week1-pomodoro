@@ -1,7 +1,28 @@
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
 app-clock {
   width: 300px;
   height: 300px;
   margin-bottom: 50px;
+}
+
+.actions {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.task-title {
+  margin-top: 4rem;
+  font-size: 24px;
+  text-align: center;
+}
+
+.estimation {
+  min-height: 5rem;
 }
 
 .btn {
