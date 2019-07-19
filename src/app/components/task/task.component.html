@@ -2,11 +2,10 @@
 <div class="content">
   <div class="title">{{ title }}</div>
   <div class="indicators">
+    <app-task-indicator [estimation]="estimation"
+                        [finished]="finished"
+                        [workElapse]="workElapse"></app-task-indicator>
 
-    <app-donut class="indicator"
-               *ngFor="let e of indicators; index as i"
-               [value]="percentage(i)"
-    ></app-donut>
   </div>
 </div>
 <div class="actions">

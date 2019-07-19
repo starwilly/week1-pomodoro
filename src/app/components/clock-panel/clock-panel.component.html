@@ -1,7 +1,10 @@
 <div *ngIf="currentTask">
   <h2 class="task-title">{{ currentTask.title }}</h2>
-  <div class="estimation">
-
+  <div class="indicators">
+    <app-task-indicator [workElapse]="currentTask.workElapse"
+                        [estimation]="currentTask.estimation"
+                        [finished]="currentTask.workHistory.length"
+    ></app-task-indicator>
   </div>
   <div *ngIf="currentTask.state === TaskState.work">
     <app-clock [elapse]="currentTask.workElapse"

@@ -16,6 +16,7 @@ import { TaskComponent } from './components/task/task.component';
 import { EditableTaskComponent } from './components/editable-task/editable-task.component';
 import { DonutComponent } from './components/donut/donut.component';
 import { ClockPanelComponent } from './components/clock-panel/clock-panel.component';
+import { TaskIndicatorComponent } from './components/task-indicator/task-indicator.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ClockPanelComponent } from './components/clock-panel/clock-panel.compon
     TaskComponent,
     EditableTaskComponent,
     DonutComponent,
-    ClockPanelComponent
+    ClockPanelComponent,
+    TaskIndicatorComponent
   ],
   imports: [
     BrowserModule,
