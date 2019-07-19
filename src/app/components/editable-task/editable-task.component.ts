@@ -11,6 +11,7 @@ export class EditableTaskComponent implements OnInit {
 
   @Input() task: Task;
   @Input() isOpen: boolean;
+  @Input() showIcon = false;
 
   @Output() toggleBtnClick = new EventEmitter<void >();
   @Output() taskEdit = new EventEmitter<Task>();
@@ -31,7 +32,6 @@ export class EditableTaskComponent implements OnInit {
   editTask(form: NgForm) {
     const task = new Task({...this.task.data, ...form.value});
     this.taskEdit.emit(task);
-    console.log(task);
     this.editingTask = null;
   }
 

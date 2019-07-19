@@ -12,6 +12,7 @@ export class TaskComponent implements OnInit {
   @Input() estimation: number;
   @Input() finished: number;
   @Input() workElapse: number;
+  @Input() showIcon = false;
 
   constructor() { }
 

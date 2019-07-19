@@ -11,6 +11,7 @@
     <div class="task-list">
       <app-editable-task *ngFor="let task of tasks; index as i"
                          [task]="task"
+                         [showIcon]="!!currentTask && currentTask.id === task.id"
                          [isOpen]="!!editingTask && editingTask.id === task.id"
                          (toggleBtnClick)="toggleTaskEdit(task)"
                          (taskEdit)="updateTask($event)"

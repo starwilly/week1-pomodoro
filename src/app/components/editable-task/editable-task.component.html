@@ -2,6 +2,7 @@
           [estimation]="task.estimation"
           [finished]="task.workHistory.length"
           [workElapse]="task.workElapse"
+          [showIcon]="showIcon"
           (click)="taskSelect.emit(task)"></app-task>
 <button class="toggle-btn" (click)="onToggleBtnClick()">...</button>
 <div [hidden]="!isOpen">
