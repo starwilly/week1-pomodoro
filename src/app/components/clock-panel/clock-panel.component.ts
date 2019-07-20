@@ -2,7 +2,8 @@ import {AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild} from
 import {TaskDataService} from '../../services/task-data.service';
 import {Observable, Subject, timer} from 'rxjs';
 import {BREAK_TIME, Task, TaskState, WORK_TIME} from '../../models';
-import {filter, map, takeUntil} from 'rxjs/operators';
+import {filter, map, take, takeUntil} from 'rxjs/operators';
+import {RingtoneService} from '../../services/ringtone.service';
 
 @Component({
   selector: 'app-clock-panel',
@@ -15,10 +16,11 @@ export class ClockPanelComponent implements OnInit, OnDestroy, AfterViewInit {
   currentTask: Task;
   TaskState = TaskState;
   ticking = false;
+  ringtoneFile = '';
 
   @ViewChild('clockAudio', {static: false}) clockAudioRef: ElementRef;
 
-  constructor(taskData: TaskDataService) {
+  constructor(taskData: TaskDataService, private ringtoneService: RingtoneService) {
     taskData.selectedTask$.pipe(takeUntil(this.destroy$))
       .subscribe(task => this.currentTask = task);
   }
@@ -44,8 +46,11 @@ export class ClockPanelComponent implements OnInit, OnDestroy, AfterViewInit {
         // work complete
         this.ticking = false;
         this.currentTask.finishWork();
+        this.playWorkRingtone('work');
+        console.log('work ringtone played');
       }
     });
+
 
     breakTick$.subscribe((elapse) => {
       if (elapse < BREAK_TIME) {
@@ -53,7 +58,19 @@ export class ClockPanelComponent implements OnInit, OnDestroy, AfterViewInit {
       } else {
         this.ticking = false;
         this.currentTask.finishBreak();
+        this.playWorkRingtone('break');
+        console.log('break ringtone played');
       }
+    });
+  }
+
+  private playWorkRingtone(type: 'work' | 'break'): void {
+    const elem = this.clockAudioRef.nativeElement as HTMLAudioElement;
+    const ob = type === 'work' ? this.ringtoneService.workRingtone$ : this.ringtoneService.breakRingtone$;
+    ob.pipe(take(1)).subscribe(f => {
+      this.ringtoneFile = `assets/ringtones/${f}`;
+      elem.load();
+      elem.play();
     });
   }
 

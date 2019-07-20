@@ -3,19 +3,62 @@
     <h2 class="g-panel__title">RING TONE</h2>
   </div>
   <div class="g-panel__body">
+    <audio #ringtone (ended)="onPlayEnd()">
+      <source [src]=" playingRingtone ?
+        'assets/ringtones/' + playingRingtone.filename : '' "
+              type="audio/mp3">
+    </audio>
     <mat-tab-group [disableRipple]="true">
       <mat-tab label="WORK">
-        <ul class="list">
-          <li class="list-item">
-            <div class="list-item__content"> Ring tone 1 </div>
-           <button class="play">p</button>
-          </li>
-          <li class="list-item">
-            <div class="list-item__content"> Ring tone 1 </div>
-            <button class="play">p</button>
+        <ul class="list" >
+          <li *ngFor="let ringtone of ringtones$ | async"
+              class="list-item"
+              [ngClass]="{active: ringtone.filename === workRingtone}"
+              (click)="setRingtone('work', ringtone.filename)"
+          >
+            <div class="list-item__content">{{ ringtone.title }}</div>
+            <button class="btn" *ngIf="playingRingtone && playingRingtone.filename === ringtone.filename; else playBtn"
+                    (click)="stop()"
+              >
+              <svg width="20px" height="20px" viewBox="0 0 20 20">
+                <rect fill="currentColor" fill-rule="nonzero" x="4" y="4" width="11.6000004" height="12.4285718" rx="0.5"></rect>
+              </svg>
+            </button>
+            <ng-template #playBtn>
+              <button class="btn btn--play" (click)="play(ringtone)">
+                <svg width="20px" height="20px" viewBox="0 0 20 20">
+                  <path d="M11.0265543,5.32330641 C11.1612384,5.12131986 11.3879514,5 11.6307237,5 C11.873496,5 12.1002089,5.12131986 12.2348931,5.32330641 L18.1393418,14.1825211 C18.2868058,14.4052774 18.3000545,14.6910131 18.173836,14.9264592 C18.0476174,15.1619054 17.8023162,15.309037 17.5351724,15.3095293 L5.72627496,15.3095293 C5.45840219,15.3095694 5.21226184,15.1621335 5.08588883,14.9259435 C4.95951582,14.6897536 4.97343617,14.4031726 5.12210557,14.1803426 L11.0265543,5.32330641 Z" fill="currentColor" fill-rule="nonzero" transform="translate(11.630000, 10.154765) rotate(90.000000) translate(-11.630000, -10.154765) "></path>
+                </svg>
+              </button>
+            </ng-template>
           </li>
         </ul>
       </mat-tab>
-      <mat-tab label="BREAK">break</mat-tab>
+      <mat-tab label="BREAK">
+        <ul class="list" >
+          <li *ngFor="let ringtone of ringtones$ | async"
+              class="list-item"
+              [ngClass]="{active: ringtone.filename === breakRingtone}"
+              (click)="setRingtone('break', ringtone.filename)"
+          >
+            <div class="list-item__content">{{ ringtone.title }}</div>
+            <button class="btn" *ngIf="playingRingtone && playingRingtone.filename === ringtone.filename; else playBtn"
+                    (click)="stop()"
+            >
+              <svg width="20px" height="20px" viewBox="0 0 20 20">
+                <rect fill="currentColor" fill-rule="nonzero" x="4" y="4" width="11.6000004" height="12.4285718" rx="0.5"></rect>
+              </svg>
+            </button>
+            <ng-template #playBtn>
+              <button class="btn btn--play" (click)="play(ringtone)">
+                <svg width="20px" height="20px" viewBox="0 0 20 20">
+                  <path d="M11.0265543,5.32330641 C11.1612384,5.12131986 11.3879514,5 11.6307237,5 C11.873496,5 12.1002089,5.12131986 12.2348931,5.32330641 L18.1393418,14.1825211 C18.2868058,14.4052774 18.3000545,14.6910131 18.173836,14.9264592 C18.0476174,15.1619054 17.8023162,15.309037 17.5351724,15.3095293 L5.72627496,15.3095293 C5.45840219,15.3095694 5.21226184,15.1621335 5.08588883,14.9259435 C4.95951582,14.6897536 4.97343617,14.4031726 5.12210557,14.1803426 L11.0265543,5.32330641 Z" fill="currentColor" fill-rule="nonzero" transform="translate(11.630000, 10.154765) rotate(90.000000) translate(-11.630000, -10.154765) "></path>
+                </svg>
+              </button>
+            </ng-template>
+          </li>
+        </ul>
+
+      </mat-tab>
     </mat-tab-group>
   </div>

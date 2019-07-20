@@ -1,5 +1,5 @@
-<audio #clockAudio>
-     <source src='assets/ringtones/Alarm_Clock.mp3' type="audio/mp3">
+<audio #clockAudio >
+     <source [src]='ringtoneFile' type="audio/mp3">
 </audio>
 <div *ngIf="currentTask">
   <h2 class="task-title">{{ currentTask.title }}</h2>
