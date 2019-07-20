@@ -48,7 +48,36 @@ app-clock {
   }
 }
 
-.placeholder {
+.placeholder-img-wrapper {
+  position: relative;
+}
+
+.placeholder-img {
   margin-top: 50px;
   margin-bottom: 50px;
+}
+
+.placeholder-text {
+  text-align: center;
+  font-size: .875rem;
+  line-height: 20px;
+  color: #333333;
+  letter-spacing: 0.1em;
+}
+
+.clock-text {
+  color: #FCFCFC;
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: .15em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 300px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -22,7 +22,13 @@
     </div>
   </div>
   <ng-template #noTask>
-    <img class="placeholder" width="300px" height="300px" src="assets/images/tomato_small_color.svg" alt="">
+    <div class="placeholder">
+      <div class="placeholder-img-wrapper">
+        <img class="placeholder-img" width="300px" height="300px" src="assets/images/tomato_small_color.svg" alt="">
+        <div class="clock-text">PODOMORO</div>
+      </div>
+      <div class="placeholder-text"> You don’t have any task now,<br> please add task first!</div>
+    </div>
   </ng-template>
   <div class="actions" *ngIf="currentTask">
     <button class="btn" (click)="play()">
