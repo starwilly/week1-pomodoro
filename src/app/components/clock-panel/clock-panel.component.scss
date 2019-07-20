@@ -21,11 +21,13 @@ app-clock {
   font-size: 24px;
   text-align: center;
   margin-bottom: 0;
+  min-height: 40px;
 }
 
 .indicators {
   text-align: center;
   margin-bottom: 0.5rem;
+  min-height: 20px;
 }
 
 .estimation {
@@ -44,4 +46,9 @@ app-clock {
     min-width: 18px;
     max-height: 18px;
   }
+}
+
+.placeholder {
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
