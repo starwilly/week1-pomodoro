@@ -1,0 +1,38 @@
+<div class="g-panel">
+  <div class="g-panel__header">
+    <h2 class="g-panel__title">ANALYTICS REPORT</h2>
+  </div>
+  <div class="g-panel__body">
+    <div class="section">
+      <div class="subtitle">TOMATO OF THIS WEEK</div>
+      <div class="info">
+        <div class="col">
+          <div class="count">{{ todayCount }}</div>
+          <div class="label">today</div>
+        </div>
+        <div class="col">
+          <div class="count">{{ currentWeekCount }}</div>
+          <div class="label">{{ currentWeek[0] | date: 'MM-dd'}} - {{ currentWeek[6] | date: 'MM-dd' }}</div>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="subtitle">CHART <span class="text">{{ chartWeek[0] | date: 'MM/dd' }} - {{ chartWeek[6] | date: 'MM/dd' }}</span></div>
+      <div class="info chart">
+        <div class="chart-column" *ngFor="let day of chartWeekCount">
+          {{ day.length }}
+          <span *ngFor="let item of day" class="work-item"></span>
+        </div>
+      </div>
+      <div class="chart-labels">
+        <div class="chart-label" *ngFor="let d of chartWeek">{{ d | date: 'MM/dd'}}
+          <span class="weekDay">{{ d | date: 'EEE' }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="actions">
+      <button class="btn" (click)="onPrev()">prev</button>
+      <button class="btn" (click)="onNext()" [disabled]="!hasNext">next</button>
+    </div>
+  </div>
+</div>

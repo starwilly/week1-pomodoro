@@ -18,6 +18,7 @@ import { DonutComponent } from './components/donut/donut.component';
 import { ClockPanelComponent } from './components/clock-panel/clock-panel.component';
 import { TaskIndicatorComponent } from './components/task-indicator/task-indicator.component';
 import {MatTabsModule} from '@angular/material';
+import { ReportComponent } from './components/report/report.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {MatTabsModule} from '@angular/material';
     EditableTaskComponent,
     DonutComponent,
     ClockPanelComponent,
-    TaskIndicatorComponent
+    TaskIndicatorComponent,
+    ReportComponent
   ],
   imports: [
     BrowserModule,

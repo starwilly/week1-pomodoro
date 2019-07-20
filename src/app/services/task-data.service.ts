@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Task} from '../models';
 import {BehaviorSubject, Observable, ReplaySubject} from 'rxjs';
-import {take} from 'rxjs/operators';
 
 const defaultTasks: Task[] = [
   new Task({
@@ -18,10 +17,20 @@ const defaultTasks: Task[] = [
     {
       title: 'first todo',
       estimation: 5,
+      workHistory: [
+        new Date('2019-07-18'),
+        new Date('2019-07-18'),
+        new Date('2019-07-18'),
+        new Date('2019-07-18'),
+        new Date('2019-07-20'),
+      ]
     }),
   new Task({
     title: 'first todo',
     estimation: 5,
+    workHistory: [
+      new Date('2019-07-13'),
+    ]
   }),
   new Task({
     title: 'second todo',
