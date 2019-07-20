@@ -17,6 +17,7 @@ import { EditableTaskComponent } from './components/editable-task/editable-task.
 import { DonutComponent } from './components/donut/donut.component';
 import { ClockPanelComponent } from './components/clock-panel/clock-panel.component';
 import { TaskIndicatorComponent } from './components/task-indicator/task-indicator.component';
+import {MatTabsModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { TaskIndicatorComponent } from './components/task-indicator/task-indicat
     BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
+    MatTabsModule
   ],
   providers: [TaskDataService],
   bootstrap: [AppComponent]

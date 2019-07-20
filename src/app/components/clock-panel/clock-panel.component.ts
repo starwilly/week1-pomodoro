@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {TaskDataService} from '../../services/task-data.service';
 import {Observable, Subject, timer} from 'rxjs';
 import {BREAK_TIME, Task, TaskState, WORK_TIME} from '../../models';
@@ -9,14 +9,14 @@ import {filter, map, takeUntil} from 'rxjs/operators';
   templateUrl: './clock-panel.component.html',
   styleUrls: ['./clock-panel.component.scss']
 })
-export class ClockPanelComponent implements OnInit, OnDestroy {
+export class ClockPanelComponent implements OnInit, OnDestroy, AfterViewInit {
 
   private destroy$ = new Subject<void>();
   currentTask: Task;
-  WORK_TIME = WORK_TIME;
-  BREAK_TIME = BREAK_TIME;
   TaskState = TaskState;
   ticking = false;
+
+  @ViewChild('clockAudio', {static: false}) clockAudioRef: ElementRef;
 
   constructor(taskData: TaskDataService) {
     taskData.selectedTask$.pipe(takeUntil(this.destroy$))
@@ -81,5 +81,10 @@ export class ClockPanelComponent implements OnInit, OnDestroy {
       this.currentTask.state = TaskState.work;
     }
     this.ticking = false;
+  }
+
+  ngAfterViewInit(): void {
+    // console.log(this.clockAudioRef);
+    // this.clockAudioRef.nativeElement.play();
   }
 }

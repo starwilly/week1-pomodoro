@@ -1,6 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
 @import '~@angular/material/theming';
+// Plus imports for other components in your app.
 
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
 @include mat-core();
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
@@ -134,3 +137,53 @@ input.form-control {
   display: inline-block;
   width: 100%;
 }
+
+//.mat-tab-label {
+//  padding: 20px 5px !important;k
+//}
+
+
+//.mat-tab-label.mat-tab-label-active {
+//    padding: 0px 15px ;
+//  justify-content: flex-start;
+//  }
+
+  //app-child .mat-tab-label{
+  //  padding: 0px 15px ;
+  //justify-content: flex-start;
+  //}
+
+//.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar{
+//    background:#6168e7;
+// }
+
+app-root {
+  .mat-tab-header {
+    border-bottom: none;
+  }
+  .mat-tab-label {
+    height: 25px;
+    color: #ACACAC;
+    opacity: 1;
+    font-family: 'Lato', sans-serif;
+    font-size: .75rem;
+    font-weight: 900;
+    border-radius: 8px 8px 0 0;
+    padding: 5px 20px;
+    min-width: 0;
+    background-color: #606060;
+  }
+
+  .mat-tab-label + .mat-tab-label {
+    margin-left: 5px;
+  }
+  .mat-tab-label-active {
+    color: #FCFCFC;
+    background-color: #EA5548;
+  }
+
+  .mat-ink-bar {
+    display: none;
+  }
+}
+
